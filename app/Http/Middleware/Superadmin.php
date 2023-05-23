@@ -21,7 +21,19 @@ class Superadmin
         }
 
         $user=Auth::user();
+        if($user->role==1){
+            return $next($request);
+        }
+        if($user->role==2){
+            return redirect('/admin');
+        }
+        if($user->role==3){
+            return redirect('/staff');
+        }
+        if($user->role==4){
+            return redirect('/client');
+        }
 
-        return $next($request);
+        
     }
 }
