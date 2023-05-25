@@ -25,6 +25,10 @@ Route::get('superadmin', function(){
     return view('superadmin');
 })->name('superadmin')->middleware('superadmin');
 
-Route::get('admin', function(){
+Route::get('/admin', function(){
     return view('admin');
 })->name('admin')->middleware('admin');
+
+Route::get('/staff', function(){
+    return view('staff');
+})->name('staff')->middleware('staff');
