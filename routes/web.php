@@ -24,3 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('superadmin', function(){
     return view('superadmin');
 })->name('superadmin')->middleware('superadmin');
+
+Route::get('admin', function(){
+    return view('admin');
+})->name('admin')->middleware('admin');
